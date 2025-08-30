@@ -1,0 +1,26 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Task :app:dependencies
+
+------------------------------------------------------------
+Project ':app'
+------------------------------------------------------------
+
+debugRuntimeClasspath - Runtime classpath of /debug.
++--- io.flutter:armeabi_v7a_debug:1.0.0-72f2b18bb094f92f62a3113a8075240ebb59affa
++--- io.flutter:arm64_v8a_debug:1.0.0-72f2b18bb094f92f62a3113a8075240ebb59affa
++--- io.flutter:x86_64_debug:1.0.0-72f2b18bb094f92f62a3113a8075240ebb59affa
+\--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23
+     \--- org.jetbrains:annotations:13.0
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+BUİLD SUCCESSFUL in 896ms
+6 actionable tasks: 2 executed, 4 up-to-date

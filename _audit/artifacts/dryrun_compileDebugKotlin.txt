@@ -1,0 +1,39 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+:app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+:app:preBuild SKIPPED
+:app:preDebugBuild SKIPPED
+:app:generateDebugBuildConfig SKIPPED
+:app:compileFlutterBuildDebug SKIPPED
+:app:packJniLibsflutterBuildDebug SKIPPED
+:app:checkDebugAarMetadata SKIPPED
+:app:cleanMergeDebugAssets SKIPPED
+:app:mergeDebugShaders SKIPPED
+:app:compileDebugShaders SKIPPED
+:app:generateDebugAssets SKIPPED
+:app:mergeDebugAssets SKIPPED
+:app:copyFlutterAssetsDebug SKIPPED
+:app:generateDebugResValues SKIPPED
+:app:injectCrashlyticsMappingFileIdDebug SKIPPED
+:app:processDebugGoogleServices SKIPPED
+:app:mapDebugSourceSetPaths SKIPPED
+:app:generateDebugResources SKIPPED
+:app:mergeDebugResources SKIPPED
+:app:packageDebugResources SKIPPED
+:app:parseDebugLocalResources SKIPPED
+:app:createDebugCompatibleScreenManifests SKIPPED
+:app:extractDeepLinksDebug SKIPPED
+:app:processDebugMainManifest SKIPPED
+:app:processDebugManifest SKIPPED
+:app:processDebugManifestForPackage SKIPPED
+:app:processDebugResources SKIPPED
+:app:compileDebugKotlin SKIPPED
+
+BUİLD SUCCESSFUL in 1s
+5 actionable tasks: 1 executed, 4 up-to-date

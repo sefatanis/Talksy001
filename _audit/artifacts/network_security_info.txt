@@ -1,0 +1,2 @@
+total 8
+-rw-r--r--@ 1 st  staff  329 Aug 29 09:30 network_security_config.xml

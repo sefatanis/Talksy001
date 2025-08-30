@@ -1,0 +1,101 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
+}
+
+flutter { source '../..' }
+
+android {
+    namespace "com.sefatanis.talksy"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.sefatanis.talksy"
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName "0.1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions { jvmTarget = "11" }
+
+    packagingOptions {
+        resources { excludes += ["META-INF/AL2.0","META-INF/LGPL2.1","META-INF/*.kotlin_module"] }
+    }
+
+    buildFeatures { buildConfig = true }
+}
+
+/** ===== FAILSAFE #1: Flutter embedding AAR’ları explicit pin ===== */
+def engineVersionFile = new File(System.getProperty("user.home") + "/.flutter-sdk/bin/internal/engine.version")
+if (!engineVersionFile.exists()) {
+    throw new GradleException("Flutter engine.version not found at " + engineVersionFile.absolutePath)
+}
+def engineSha = engineVersionFile.getText("UTF-8").trim()
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
+
+    debugImplementation   "io.flutter:flutter_embedding_debug:1.0.0-${engineSha}"
+    profileImplementation "io.flutter:flutter_embedding_profile:1.0.0-${engineSha}"
+    releaseImplementation "io.flutter:flutter_embedding_release:1.0.0-${engineSha}"
+
+    implementation "androidx.annotation:annotation:1.8.0"
+}
+
+/** ===== FAILSAFE #2: Build öncesi kaynak ağaca sızmış registrant’ı temizle ===== */
+tasks.register("purgeRogueRegistrant") {
+    doFirst {
+        def p = project.projectDir
+        delete(new File(p, "src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java"))
+        delete(new File(p, "src/main/java/io/flutter/plugins"))
+        delete(new File(p, "src/main/kotlin/io/flutter/plugins/GeneratedPluginRegistrant.kt"))
+    }
+}
+tasks.matching { it.name == "preBuild" }.all { it.dependsOn("purgeRogueRegistrant") }
+
+/** ===== FIX: Build bittiğinde APK’yı Flutter’ın beklediği kök dizine yansıt =====
+ * Gradle üretir:    android/app/build/outputs/flutter-apk/app-<variant>.apk
+ * Flutter bekler:   <root>/build/app/outputs/flutter-apk/app-<variant>.apk
+ * Task adına bağlanma; buildFinished ile dosya mevcutsa kopyala.
+ */
+gradle.buildFinished { result ->
+    try {
+        def projRoot     = project.rootProject.projectDir.parentFile  // .../talksy
+        def destDir      = new File(projRoot, "build/app/outputs/flutter-apk")
+        def variants     = ["debug","profile","release"]
+        variants.each { v ->
+            def src = new File(buildDir, "outputs/flutter-apk/app-${v}.apk")
+            if (src.exists()) {
+                destDir.mkdirs()
+                // Ant copy güvenli ve basit
+                ant.copy(file: src, todir: destDir)
+                logger.lifecycle("Mirrored ${src.name} -> ${destDir}")
+            }
+        }
+    } catch (Throwable t) {
+        logger.lifecycle("APK mirror skipped: ${t.message}")
+    }
+}

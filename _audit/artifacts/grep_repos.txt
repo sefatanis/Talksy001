@@ -1,0 +1,10 @@
+14:    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+36:    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+android/settings.gradle:19:        maven { url "https://storage.googleapis.com/download.flutter.io" } // Flutter engine artifacts
+android/settings.gradle:38:        maven { url "https://storage.googleapis.com/download.flutter.io" } // Flutter engine
+android/build.gradle:10:        maven { url "https://storage.googleapis.com/download.flutter.io" }
+android/build.gradle:18:        maven { url "https://storage.googleapis.com/download.flutter.io" }
+5:// Flutter için zorunlu: dev.flutter.flutter-gradle-plugin + flutter { source '../..' }.
+10:    id "dev.flutter.flutter-gradle-plugin"   // Yeni Flutter yolu
+5:// Flutter için zorunlu: dev.flutter.flutter-gradle-plugin + flutter { source '../..' }.
+4:// KESİNLİKLE repositories {} EKLEME.

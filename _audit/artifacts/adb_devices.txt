@@ -1,0 +1,3 @@
+List of devices attached
+129274853B000736       device usb:20-1.2 product:KL4-TR model:TECNO_KL4 device:TECNO-KL4 transport_id:1
+

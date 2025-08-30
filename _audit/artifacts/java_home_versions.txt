@@ -1,0 +1,4 @@
+Matching Java Virtual Machines (2):
+    17.0.16 (x86_64) "Homebrew" - "OpenJDK 17.0.16" /usr/local/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home
+    11.0.28 (x86_64) "Homebrew" - "OpenJDK 11.0.28" /usr/local/Cellar/openjdk@11/11.0.28/libexec/openjdk.jdk/Contents/Home
+/usr/local/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home

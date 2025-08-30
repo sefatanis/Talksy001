@@ -1,0 +1,20 @@
+total 8
+drwxr-xr-x@ 19 st  staff   608 Aug  8 16:52 .
+drwxr-xr-x@  3 st  staff    96 Jul 18 22:38 ..
+drwxr-xr-x@  2 st  staff    64 Aug  8 16:52 .downloadIntermediates
+-rw-r--r--@  1 st  staff    16 Aug 29 10:18 .knownPackages
+drwxr-xr-x@  2 st  staff    64 Aug 26 18:27 .temp
+drwxr-xr-x@  6 st  staff   192 Jul 30 04:37 build-tools
+drwxr-xr-x@  5 st  staff   160 Aug  4 03:27 cmake
+drwxr-xr-x@  3 st  staff    96 Jul 18 22:53 cmdline-tools
+drwxr-xr-x@ 29 st  staff   928 Aug  8 16:52 emulator
+drwxr-xr-x@  4 st  staff   128 Jul 18 22:59 extras
+drwxr-xr-x@  3 st  staff    96 Jul 20 02:44 fonts
+drwxr-xr-x@  9 st  staff   288 Aug  7 13:47 licenses
+drwxr-xr-x@  8 st  staff   256 Aug 26 18:27 ndk
+drwxr-xr-x@ 15 st  staff   480 Jul 18 22:42 platform-tools
+drwxr-xr-x@ 41 st  staff  1312 Jul 19 05:28 platforms
+drwxr-xr-x@  5 st  staff   160 Jul 18 22:59 skiaparser
+drwxr-xr-x@ 53 st  staff  1696 Jul 26 05:28 skins
+drwxr-xr-x@ 24 st  staff   768 Jul 19 05:28 sources
+drwxr-xr-x@  4 st  staff   128 Jul 26 05:37 system-images

@@ -1,0 +1,70 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+:app:DebugMinSdkCheck SKIPPED
+:app:preBuild SKIPPED
+:app:preDebugBuild SKIPPED
+:app:mergeDebugNativeDebugMetadata SKIPPED
+:app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+:app:generateDebugBuildConfig SKIPPED
+:app:compileFlutterBuildDebug SKIPPED
+:app:packJniLibsflutterBuildDebug SKIPPED
+:app:checkDebugAarMetadata SKIPPED
+:app:cleanMergeDebugAssets SKIPPED
+:app:mergeDebugShaders SKIPPED
+:app:compileDebugShaders SKIPPED
+:app:generateDebugAssets SKIPPED
+:app:mergeDebugAssets SKIPPED
+:app:copyFlutterAssetsDebug SKIPPED
+:app:generateDebugResValues SKIPPED
+:app:injectCrashlyticsMappingFileIdDebug SKIPPED
+:app:processDebugGoogleServices SKIPPED
+:app:mapDebugSourceSetPaths SKIPPED
+:app:generateDebugResources SKIPPED
+:app:mergeDebugResources SKIPPED
+:app:packageDebugResources SKIPPED
+:app:parseDebugLocalResources SKIPPED
+:app:createDebugCompatibleScreenManifests SKIPPED
+:app:extractDeepLinksDebug SKIPPED
+:app:processDebugMainManifest SKIPPED
+:app:processDebugManifest SKIPPED
+:app:processDebugManifestForPackage SKIPPED
+:app:processDebugResources SKIPPED
+:app:compileDebugKotlin SKIPPED
+:app:javaPreCompileDebug SKIPPED
+:app:compileDebugJavaWithJavac SKIPPED
+:app:compressDebugAssets SKIPPED
+:app:processDebugJavaRes SKIPPED
+:app:mergeDebugJavaResource SKIPPED
+:app:checkDebugDuplicateClasses SKIPPED
+:app:desugarDebugFileDependencies SKIPPED
+:app:mergeExtDexDebug SKIPPED
+:app:mergeLibDexDebug SKIPPED
+:app:dexBuilderDebug SKIPPED
+:app:mergeProjectDexDebug SKIPPED
+:app:preProfileBuild SKIPPED
+:app:configureCMakeDebug[arm64-v8a] SKIPPED
+:app:buildCMakeDebug[arm64-v8a] SKIPPED
+:app:configureCMakeDebug[armeabi-v7a] SKIPPED
+:app:buildCMakeDebug[armeabi-v7a] SKIPPED
+:app:configureCMakeDebug[x86] SKIPPED
+:app:buildCMakeDebug[x86] SKIPPED
+:app:configureCMakeDebug[x86_64] SKIPPED
+:app:buildCMakeDebug[x86_64] SKIPPED
+:app:mergeDebugJniLibFolders SKIPPED
+:app:mergeDebugNativeLibs SKIPPED
+:app:stripDebugDebugSymbols SKIPPED
+:app:validateSigningDebug SKIPPED
+:app:writeDebugAppMetadata SKIPPED
+:app:writeDebugSigningConfigVersions SKIPPED
+:app:packageDebug SKIPPED
+:app:createDebugApkListingFileRedirect SKIPPED
+:app:assembleDebug SKIPPED
+
+BUİLD SUCCESSFUL in 1s
+5 actionable tasks: 1 executed, 4 up-to-date

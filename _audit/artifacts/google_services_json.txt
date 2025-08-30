@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "695759573408",
+    "project_id": "talksy-fb2c2",
+    "storage_bucket": "talksy-fb2c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695759573408:android:d5fe543b271ffeb73214c5",
+        "android_client_info": {
+          "package_name": "com.sefatanis.talksy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695759573408-7mrpuf4b8596clcevsg930h13rh6m6a6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuLnjI84OHY0WPcQdi1fxI2f4I2Lh7ZHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695759573408-7mrpuf4b8596clcevsg930h13rh6m6a6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "695759573408-363qm8c9fs9tv5utqmabv4ukq9ec2bj1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bittchatMesh"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

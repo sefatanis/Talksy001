@@ -1,0 +1,56 @@
+# -------- Flutter --------
+-keep class io.flutter.** { *; }
+-keep class io.flutter.plugins.** { *; }
+-keep class io.flutter.embedding.** { *; }
+-keep class io.flutter.util.** { *; }
+-keep class io.flutter.view.** { *; }
+-dontwarn io.flutter.**
+
+# -------- Kotlin / Metadata --------
+-keep class kotlin.Metadata { *; }
+-keep class kotlin.** { *; }
+-keep class kotlinx.** { *; }
+-dontwarn kotlin.**
+
+# -------- Firebase (genel) --------
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
+
+# -------- HTTP/Network --------
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+
+# -------- AGP 8.3.0 Optimizasyonları --------
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature
+-keepattributes Exceptions
+
+# -------- Reflection ve Serialization --------
+-keepclassmembers class * {
+    @androidx.annotation.Keep *;
+    @android.support.annotation.Keep *;
+}
+
+# -------- Native Methods --------
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# -------- Enum --------
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# -------- Parcelable --------
+-keep class * implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# -------- R8 Full Mode --------
+-allowaccessmodification
+-mergeinterfacesaggressively
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*

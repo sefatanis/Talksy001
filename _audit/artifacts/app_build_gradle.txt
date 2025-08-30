@@ -1,0 +1,66 @@
+// android/app/build.gradle
+// ==== GÖREV ====
+// Bu dosyayı AYNI İLE DEĞİŞTİR (REPLACE EXACTLY).
+// KESİNLİKLE repositories {} EKLEME.
+// Flutter için zorunlu: dev.flutter.flutter-gradle-plugin + flutter { source '../..' }.
+
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"   // Yeni Flutter yolu
+    id "com.google.gms.google-services"
+    id "com.google.firebase.crashlytics"
+}
+
+// >>> KRİTİK: Flutter modül yolu
+flutter {
+    source '../..'
+}
+
+android {
+    namespace "com.sefatanis.talksy"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.sefatanis.talksy"
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName "0.1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    // Java 11 + Kotlin JVM 11
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions { jvmTarget = "11" }
+
+    packagingOptions {
+        resources {
+            excludes += ["META-INF/AL2.0","META-INF/LGPL2.1","META-INF/*.kotlin_module"]
+        }
+    }
+
+    buildFeatures { buildConfig = true }
+}
+
+dependencies {
+    // (Opsiyonel) netlik için stdlib; eklenmese de olur
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
+}

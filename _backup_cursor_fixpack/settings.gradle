@@ -1,0 +1,45 @@
+pluginManagement {
+    // Flutter SDK yolunu local.properties'ten oku
+    def localProps = new Properties()
+    def lpFile = new File(settingsDir, "local.properties")
+    if (lpFile.exists()) {
+        lpFile.withReader("UTF-8") { r -> localProps.load(r) }
+    }
+    def flutterSdkPath = localProps.getProperty("flutter.sdk")
+    if (flutterSdkPath == null || flutterSdkPath.trim().isEmpty()) {
+        throw new GradleException("`flutter.sdk` is not set in android/local.properties")
+    }
+
+    // Flutter Gradle plugin (yeni yol)
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+
+    // Plugin çözümü için repolar
+    repositories {
+        gradlePluginPortal()
+        maven { url "https://storage.googleapis.com/download.flutter.io" } // Flutter engine artifacts
+        google()
+        mavenCentral()
+    }
+
+    // Versiyon pinleri
+    plugins {
+        id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+        id "com.android.application"           version "8.3.0"
+        id "org.jetbrains.kotlin.android"      version "1.9.23"
+        id "com.google.gms.google-services"    version "4.4.2"
+        id "com.google.firebase.crashlytics"   version "3.0.2"
+    }
+}
+
+dependencyResolutionManagement {
+    // Proje seviyesinde eklenen (Flutter'ın dinamik) repolar öncelikli olsun
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        maven { url "https://storage.googleapis.com/download.flutter.io" } // Flutter engine
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Talksy"
+include(":app")

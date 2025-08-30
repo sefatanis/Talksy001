@@ -1,0 +1,20 @@
+// android/build.gradle
+// ==== GÖREV ====
+// Root build.gradle — tüm modüller için repo setini sabitle.
+// classpath eklemiyoruz; plugin DSL kullanıyoruz.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+    }
+}
