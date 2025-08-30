@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    // Minimal User Directory security
+    match /users/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && request.auth.uid == uid;
+      allow delete: if false;
+    }
+
+    function isMember(conv) {
+      return request.auth != null
+        && conv.data.memberIds != null
+        && request.auth.uid in conv.data.memberIds;
+    }
+
+    match /conversations/{convId} {
+      allow read: if isMember(resource);
+      allow delete: if isMember(resource);
+
+      allow create: if isMember(request.resource);
+      allow update: if isMember(resource) && isMember(request.resource);
+
+      match /messages/{msgId} {
+        allow read: if isMember(get(/databases/$(db)/documents/conversations/$(convId)));
+        allow create: if request.auth != null
+          && request.resource.data.senderId == request.auth.uid
+          && isMember(get(/databases/$(db)/documents/conversations/$(convId)));
+      }
+    }
+  }
+}
